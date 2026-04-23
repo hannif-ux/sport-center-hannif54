@@ -31,3 +31,9 @@ class Resepsionis:
             lapangan.jadwal_terisi.append(jam)
             print("Booking berhasil")
             return True
+
+lapangan = Lapangan("Futsal A", 50000)
+member = Member("Andi", 100000)
+admin = Resepsionis("Siti")
+
+admin.proses_booking(member, lapangan, 10)

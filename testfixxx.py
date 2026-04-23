@@ -17,3 +17,17 @@ class Member:
 class Resepsionis:
     def __init__(self, nama):
         self.nama = nama
+
+        def proses_booking(self, member, lapangan, jam):
+            if not lapangan.cek_jadwal(jam):
+                print("Jadwal bentrok")
+                return False
+
+            if member.saldo < lapangan.harga_sewa:
+                print("Saldo tidak cukup")
+                return False
+
+            member.saldo -= lapangan.harga_sewa
+            lapangan.jadwal_terisi.append(jam)
+            print("Booking berhasil")
+            return True
